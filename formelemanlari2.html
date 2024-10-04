@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Elemanları</title>
+</head>
+<body>
+<form action="form-isle.php" method="post">
+		<fieldset>
+			<legend>Kişisel Bilgiler</legend>
+			<input type="text" name="ad" placeholder="Adınız">
+			<br>
+			<input type="number" name="yas" min="18" max="100" placeholder="Yaşınız">
+		</fieldset>
+		
+		<fieldset>
+			<legend>Kullanıcı Bilgileri</legend>
+			<input type="email" name="mail" placeholder="Mail Adresiniz" required autocomplete="off">
+			<br>
+			<input type="password" name="sifre" placeholder="Şifreniz" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{5,6}" required>
+
+		</fieldset>
+		
+		<fieldset>
+			<legend>İlgi Alanları</legend>
+			<input list="ilgi_alani"  name="ilgi_alani" placeholder="Temel alan">
+			<datalist id="ilgi_alani">
+				<option value="Yazılım">
+				<option value="Donanım">
+				<option value="İşletim Sistemleri">
+				<option value="Grafik">
+				<option value="Internet">
+			</datalist>
+		</fieldset>	
+		<fieldset>
+				<legend>Hobiler</legend>
+				<input type="checkbox" name="kitap" id="kitap">
+				<label for="kitap">Kitap okumak</label>
+				<br>
+				<input type="checkbox" name="sinema" id="sinema">
+				<label for="sinema">Sinema</label>
+				<br>
+				<input type="checkbox" name="tiyatro" id="tiyatro">
+				<label for="tiyatro">Tiyatro</label>
+		</fieldset>		
+		<fieldset>
+			<legend>Sınıf</legend>
+			<input type="radio" name="sinif" value="9"> 9. Sınıf
+			<br>
+			<input type="radio" name="sinif" value="10"> 10. Sınıf
+			<br>
+			<input type="radio" name="sinif" value="11"> 11. Sınıf
+			<br>
+			<input type="radio" name="sinif" value="12" checked> 12. Sınıf
+		</fieldset>
+		
+		<fieldset>
+			<legend>Talep Edilen Proje Ödevi</legend>
+			<select name="proje">
+				<optgroup label="Meslek Dersleri">
+					<option value="gelismis_internet">Gelişmiş Internet Uygulamaları</option>
+					<option value="internet_programciligi">Internet Programcılığı</option>
+				</optgroup>
+				<optgroup label="Kültür Deresleri">
+					<option value="dil_anlatim">Dil ve Anlatım</option>
+					<option value="beden_egitimi">Beden Eğitimi</option>
+					<option value="matematik">Matematik</option>
+				</optgroup>
+			</select>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Sosyal Medya Kullanımı</legend>
+			<select name="sosyal_medya[]" multiple>
+				<option value="twitter">Twitter</option>
+				<option value="facebook">Facebook</option>
+				<option value="instagram">Instagram</option>
+			</select>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Belirtmek İstedikleriniz</legend>
+			<textarea name="gorus" placeholder="Görüşünüzü yazınız." rows="5" cols="50"></textarea>
+		</fieldset>
+
+		<fieldset>
+			<legend>Puanlama</legend>
+			<input type="range" name="egilim" id="egilim_id" oninput="egilim_degeri_id.value = egilim_id.value; egilim_progress_id.value = egilim_id.value; egilim_meter_id.value = egilim_id.value" min="0" max="100" value="25" step="5">
+			
+			<output name="egilim_degeri" id="egilim_degeri_id">25</output>
+			
+			<br>
+			
+			<meter name="egilim_meter" id="egilim_meter_id" min="0" max="100" value="25"></meter>
+			
+			<br>
+			
+			<progress name="egilim_progress" id="egilim_progress_id" min="0" max="100" value="25"></progress>
+			
+		</fieldset>
+
+		<br>
+		
+		<input type="submit" value="GÖNDER">
+		<input type="reset" value="TEMİZLE">
+	</form>
+</body>
+</html>
